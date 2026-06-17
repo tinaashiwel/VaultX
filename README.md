@@ -1,12 +1,22 @@
-# VaultX Playwright Test Suite
-
-Automated end-to-end test framework for **VaultX**, a fintech QA training playground simulating a crypto wallet product. Built with Playwright (JavaScript) using the Page Object Model.
-
-## Tech Stack
-
-- **Test runner:** Playwright Test
-- **Language:** JavaScript (Node.js)
-- **Pattern:** Page Object Model (POM)
-- **Target environment:** Staging (`https://vault-ui-zeta.vercel.app`)
-
-## Project Structure
+VaultX/
+├── pages/                  # Page Object classes (one per app screen)
+│   ├── LoginPage.js
+│   ├── TwoFAPage.js
+│   ├── DashboardPage.js
+│   ├── HistoryPage.js
+│   ├── SendPage.js
+│   ├── ReceivePage.js
+│   └── NavPage.js
+├── tests/                  # Spec files (one per feature/module)
+│   ├── helpers/
+│   │   └── login.js         # Shared login + 2FA helper used across all specs
+│   ├── auth-login.spec.js
+│   ├── auth-2fa.spec.js
+│   ├── dashboard.spec.js
+│   ├── transfer-send.spec.js
+│   ├── transfer-recieve.spec.js
+│   ├── history.spec.js
+│   └── navigation.spec.js
+├── playwright.config.js    # Test runner config (baseURL, timeouts, workers)
+├── .env.example             # Template for required environment variables
+└── README.md
