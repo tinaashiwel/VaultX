@@ -1,13 +1,27 @@
 {
-  "name": "vaultx",
+  "name": "vaultx-qa-automation",
   "version": "1.0.0",
-  "description": "",
+  "description": "End-to-end QA automation framework for the VaultX fintech training application using Playwright and JavaScript.",
   "main": "index.js",
   "scripts": {
-    "start": "node scripts/start-webserver.js"
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:auth": "playwright test tests/auth-login.spec.js tests/auth-2fa.spec.js",
+    "test:report": "playwright show-report",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:regression": "playwright test --grep @regression"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "qa",
+    "quality-assurance",
+    "playwright",
+    "test-automation",
+    "javascript",
+    "e2e-testing",
+    "fintech"
+  ],
+  "author": "Tina Ashiwel",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
